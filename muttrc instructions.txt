@@ -1,0 +1,28 @@
+sudo apt-get install mutt
+
+mkdir -p ~/.mutt/cache/headers
+mkdir ~/.mutt/cache/bodies
+touch ~/.mutt/certificates
+touch ~/.mutt/muttrc
+vim ~/.mutt/muttrc
+
+Paste this in that:
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = 'valkariyecherry01@gmail.com'
+set imap_pass = 'poiuytrewq@12345'
+set from='valkariyecherry01@gmail.com'
+set realname='Valkarye Cherry 01'
+set folder = imaps://imap.gmail.com/
+set spoolfile = imaps://imap.gmail.com/INBOX
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set smtp_url = 'smtps://valkariyecherry01@smtp.gmail.com'
+set smtp_pass = 'poiuytrewq@12345'
+set move = no
+set imap_keepalive = 900
+
+echo "Body Message" | mutt -s "Testing Email from mutt" winibhalla645@gmail.com -a test.txt
